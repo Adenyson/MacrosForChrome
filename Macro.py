@@ -4,7 +4,7 @@ import time
 
 class Macror:
     def __init__(self):
-        self.ContuntoDeDados = ["ProduçãodatasetMenu11","ExpedidossemFaturardatasetMenu13"]
+        self.ContuntoDeDados = ["ProduçãodatasetMenu6","ExpedidossemFaturardatasetMenu3"]
         options = webdriver.ChromeOptions()
         options.add_argument('lang=pt-br')
         self.driver = webdriver.Chrome(
@@ -12,20 +12,20 @@ class Macror:
 
     def Clicar(self):
         self.driver.get('https://app.powerbi.com/groups/ae9e166d-9632-429f-be7b-1008688a7bda/list/dashboards?noSignUpCheck=1')
-        time.sleep(30)
-        for x in range(1):
+        time.sleep(65)
+        for Dataset in range(1):
             Dataset = self.driver.find_element_by_xpath("//a[@localize='ContentList_Datasets']")
             Dataset.click()
-            time.sleep(20)
+            time.sleep(10)
 
-        for x in range(2):
-            for ContuntoDeDado in self.ContuntoDeDados:
-                ContuntoDeDado = self.driver.find_element_by_xpath(f"//button[@aria-describedby='{ContuntoDeDado}']")
-                ContuntoDeDado.click()
-                if ContuntoDeDado == "ProduçãodatasetMenu11":
-                    time.sleep(300)
-                else:
-                    time.sleep(60)          
+            for ContuntoDeDado in range(2):
+                for ContuntoDeDado in self.ContuntoDeDados:
+                    ContuntoDeDado = self.driver.find_element_by_xpath(f"//button[@aria-describedby='{ContuntoDeDado}']")
+                    ContuntoDeDado.click()
+                    if ContuntoDeDado == "ProduçãodatasetMenu11":
+                        time.sleep(300)
+                    else:
+                        time.sleep(60)          
 
         
 #link:  https://app.powerbi.com/groups/ae9e166d-9632-429f-be7b-1008688a7bda/list/dashboards?noSignUpCheck=1 
